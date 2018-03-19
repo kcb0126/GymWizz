@@ -14,6 +14,12 @@ namespace GymWizz.Models
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
+            userIdentity.AddClaim(new Claim("FirstName", this.FirstName));
+            userIdentity.AddClaim(new Claim("LastName", this.LastName));
+            userIdentity.AddClaim(new Claim("IsGoing", this.IsGoing ? "true" : "false"));
+            userIdentity.AddClaim(new Claim("GoingTime", this.GoingTime.ToString()));
+            userIdentity.AddClaim(new Claim("LeavingTime", this.LeavingTime.ToString()));
+            userIdentity.AddClaim(new Claim("GymId", this.GymId.ToString()));
             return userIdentity;
         }
         // Extened property

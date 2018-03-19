@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using GymWizz.Models;
 using System.Collections.Generic;
+using GymWizz.Utils;
 
 namespace GymWizz.Controllers
 {
@@ -133,18 +134,6 @@ namespace GymWizz.Controllers
                     ModelState.AddModelError("", "Invalid code.");
                     return View(model);
             }
-        }
-
-        class Gym 
-        {
-            public int Id {get; set;}
-            public string Name {get; set;}
-
-            public static List<Gym> Gyms = new List<Gym> {
-                new Gym{Id = 0, Name = "pure gym"},
-                new Gym{Id = 1, Name = "Fitness First"},
-                new Gym{Id = 2, Name = "Titatic"}
-            };
         }
 
         //

@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Find Gym";
+    ViewBag.Gyms = new SelectList(GymWizz.Utils.Gym.Gyms, "Id", "Name");
+    ViewBag.Titles = new string[] { "PureGym", "Fitness First", "Titanic" };
+    ViewBag.Lngs = new double[] { -5.9281140000000505, -0.413641900000016, -8.29485139999997 };
+    ViewBag.Lats = new double[] { 54.593953, 51.8780095, 51.8500029 };
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<div id="input-group" style="padding: 0, 11px, 0, 13px;">
+    @Html.DropDownList("Gym Name", (SelectList)ViewBag.Gyms, new { @id="cboGym", @class = "form-control", @style = "margin-top: 9px;" })
+</div>
+
+<div id="map" style="height: 100%;"></div>
+
+<script>
+    var centerLat = 54.593978, centerLng = -5.928114;
+    function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: centerLat, lng: centerLng},
+            zoom: 13,
+            mapTypeId: 'roadmap'
+        });
+
+        var markers = [];
+
+        var lngs = [-5.928114, -5.891547, -5.909677];
+        var lats = [54.593978, 54.596351, 54.604958];
+        var titles = ["PureGym", "Fitness First", "Titanic" ];
+
+		var inputGroup = document.getElementById('input-group');
+		map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputGroup);
+
+		var cboGym = document.getElementById('cboGym');
+
+		function selectGym(index) {
+		    markers.forEach(function (marker) {
+		        marker.setMap(null);
+		    });
+		    markers = [];
+
+		    var latlng = new google.maps.LatLng(lats[index], lngs[index]);
+
+		    markers.push(new google.maps.Marker({ map: map, position: latlng, title: titles[index] }));
+
+		    map.setCenter(latlng);
+        }
+
+		cboGym.onchange = function () {
+		    selectGym(this.value);
+		}
+
+        var service = new google.maps.places.PlacesService(map);
+
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+            });
+        }
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdl0BStKLZbeTcYR83CDTiSdled1QGqnk&libraries=places&callback=initAutocomplete"
+        async defer></script>

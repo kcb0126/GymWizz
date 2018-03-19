@@ -1,0 +1,49 @@
+﻿@model GymWizz.Models.MainViewModel
+@{
+    ViewBag.Title = "Main";
+}
+
+<h2>Main Interface</h2>
+<h4>@ViewBag.GymName</h4>
+<h5>Number of people In gym: @ViewBag.NumberOfPeople </h5>
+
+@using (Html.BeginForm("Main", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form"}))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.IsGoing, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.CheckBoxFor(m => m.IsGoing, new {@id="isgoing", @checked=ViewBag.IsGoing})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GoingTime, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.GoingTime, (SelectList)ViewBag.GoingTimes, new { @id="goingtime", @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LeavingTime, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.LeavingTime, (SelectList)ViewBag.LeavingTimes, new { @id="leavingtime", @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Alarm", new { @class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.CheckBox("alarm")
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Save" />
+        </div>
+    </div>
+    <script>
+        document.getElementById("goingtime") = @ViewBag.GoingTime;
+        document.getElementById("leavingtime") = @ViewBag.LeavingTime;
+    </script>
+
+}
+

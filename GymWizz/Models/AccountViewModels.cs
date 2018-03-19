@@ -93,6 +93,20 @@ namespace GymWizz.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class MainViewModel
+    {
+        [Display(Name = "Goint to gym")]
+        public bool IsGoing { get; set; }
+
+        [Required]
+        [Display(Name = "Going Time")]
+        public int GoingTime { get; set; }
+
+        [Required]
+        [Display(Name = "Leaving Time")]
+        public int LeavingTime { get; set; }
+    }
+
     public class ResetPasswordViewModel
     {
         [Required]
