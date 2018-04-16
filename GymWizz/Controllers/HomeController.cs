@@ -120,35 +120,29 @@ namespace GymWizz.Controllers
                 ctx.SaveChanges();
 
                 return RedirectToAction("Main");
-
-                //ViewBag.FirstName = currentUser.FirstName;
-                //ViewBag.LastName = currentUser.LastName;
-                //ViewBag.IsGoing = currentUser.IsGoing;
-                //ViewBag.GoingTime = currentUser.GoingTime;
-                //ViewBag.LeavingTime = currentUser.LeavingTime;
-                //ViewBag.GymName = User.Identity.GetGymName();
-
-                //ViewBag.GoingTimes = new SelectList(GoingTime.GoingTimes, "Id", "Name");
-                //ViewBag.LeavingTimes = new SelectList(LeavingTime.LeavingTimes, "Id", "Name");
-
-                ////var db = new ApplicationUserManager
-                //ApplicationDbContext context = new ApplicationDbContext();
-                //var users = context.Users.ToList();
-                //var count = 0;
-                //foreach (var user in users)
-                //{
-                //    if (user.IsGoing && user.GymId == User.Identity.GetGymId())
-                //    {
-                //        var hour = DateTime.Now.Hour;
-                //        if (user.GoingTime + 12 <= hour && hour <= user.LeavingTime + 12)
-                //        {
-                //            count++;
-                //        }
-                //    }
-                //}
-                //ViewBag.NumberOfPeople = count;
             }
             return View(model);
         }
+
+        public ActionResult Plan()
+        {
+            var email = User.Identity.Name;
+            var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
+            var manager = new UserManager<ApplicationUser>(store);
+            var currentUser = manager.FindByEmail(User.Identity.Name);
+
+            ViewBag.LegRaises = currentUser.LegRaises ? "true" : "false";
+            ViewBag.SitUps = currentUser.SitUps ? "true" : "false";
+            ViewBag.AbBikes = currentUser.AbBikes ? "true" : "false";
+            ViewBag.SitUpTouchingKnees = currentUser.SitUpTouchingKnees ? "true" : "false";
+            ViewBag.PlankFromKnees = currentUser.PlankFromKnees ? "true" : "false";
+            ViewBag.Arms = currentUser.Arms ? "true" : "false";
+            ViewBag.Leg = currentUser.Leg ? "true" : "false";
+            ViewBag.Chest = currentUser.Chest ? "true" : "false";
+            ViewBag.TotalBody = currentUser.TotalBody ? "true" : "false";
+
+            return View();
+        }
+
     }
 }
