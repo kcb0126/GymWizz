@@ -175,5 +175,9 @@ namespace GymWizz.Controllers
             return View(model);
         }
 
+        public ActionResult Videos()
+        {
+            return View();
+        }
     }
 }

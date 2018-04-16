@@ -247,6 +247,13 @@
     <Content Include="Images\img1.png" />
     <Content Include="Images\img2.jpeg" />
     <Content Include="Images\img3.jpg" />
+    <Content Include="Images\video1.png" />
+    <Content Include="Images\video2.png" />
+    <Content Include="Images\video3.png" />
+    <Content Include="Images\video4.png" />
+    <Content Include="Images\video5.png" />
+    <Content Include="Images\video6.png" />
+    <Content Include="Images\VideosLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -301,6 +308,7 @@
     <Content Include="Views\Account\FindGym.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Home\Plan.cshtml" />
+    <Content Include="Views\Home\Videos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
