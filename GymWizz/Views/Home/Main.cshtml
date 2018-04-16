@@ -5,7 +5,7 @@
 
 <h2>Main Interface</h2>
 <h4>@ViewBag.GymName</h4>
-<h5>Number of people In gym: @ViewBag.NumberOfPeople </h5>
+<h5><span id="currentNum">Number of people In gym: @ViewBag.NumberOfPeople </span></h5>
 
 @using (Html.BeginForm("Main", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form"}))
 {
@@ -14,7 +14,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.IsGoing, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.CheckBoxFor(m => m.IsGoing, new {@id="isgoing", @checked=ViewBag.IsGoing})
+            @Html.CheckBoxFor(m => m.IsGoing, new {@id="isgoing"})
         </div>
     </div>
     <div class="form-group">
@@ -32,18 +32,40 @@
     <div class="form-group">
         @Html.Label("Alarm", new { @class = "col-md-2 control-label"})
         <div class="col-md-10">
-            @Html.CheckBox("alarm")
+            @Html.CheckBoxFor(m => m.GetAlarm, new { @id = "getalarm" })
         </div>
+        <h5>Alarm when there are more than 5 people in the gym.</h5>
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Save" />
         </div>
     </div>
+    <h5>Number of people going to the gym at the same time plan: @ViewBag.NumberWithSamePlan</h5>
     <script>
-        document.getElementById("goingtime") = @ViewBag.GoingTime;
-        document.getElementById("leavingtime") = @ViewBag.LeavingTime;
+        document.getElementById("isgoing").checked = @ViewBag.IsGoing;
+        document.getElementById("getalarm").checked = @ViewBag.GetAlarm;
+        document.getElementById("goingtime").value = @ViewBag.GoingTime;
+        document.getElementById("leavingtime").value = @ViewBag.LeavingTime;
+
+        function prepareAlarm(alarmHour) {
+            var date = new Date();
+            var hour = date.getHours();
+            if (hour == alarmHour) {
+                alert("There are greater than or equal to 5 people in the gym!");
+                document.getElementById("currentNum").style = "background: yellow;";
+            } else {
+                setTimeout(prepareAlarm, 60, alarmHour);
+            }
+        }
+        @foreach (var time in (List<int>)ViewBag.AlarmTimes)
+        {
+            <text>prepareAlarm(@time);</text>
+        }
+
     </script>
+
+    
 
 }
 

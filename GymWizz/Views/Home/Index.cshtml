@@ -2,30 +2,68 @@
     ViewBag.Title = "Home Page";
 }
 
+<link rel="stylesheet" href="~/Content/SlideShow.css" />
+
 <div class="jumbotron">
     <h1>GymWizz</h1>
-    <p class="lead">GymWizz is for gym members to make plan where he/she is going to the game.</p>
-    <p><a target="_blank" href="https://www.google.com/search?q=GymWizz" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <p class="lead">GymWizz is for gym members to make plan for when he/she is going to the game.</p>
+    
+    <div class="w3-content w3-section" style="max-width:500px; height: 300px;">
+        <img class="mySlides" src="~/Images/img1.png" style="width:100%;" />
+        <img class="mySlides" src="~/Images/img2.jpeg" style="width:100%;" />
+        <img class="mySlides" src="~/Images/img3.jpg" style="width:100%;" />
+    </div>
 </div>
 
-@*<div class="row">
+<script>
+    var myIndex = 0;
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        myIndex = myIndex % x.length;
+        x[myIndex].style.display = "block";
+        setTimeout(carousel, 2000);
+    }
+
+    carousel();
+
+</script>
+
+<div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>About Us</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            GymWizz is a platform where gym members can utilise the system features to make a gym plan,
+            monitor the current number of people at the gym
+            and the number of people going to the gym during same time as you.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>GymWizz Features</h2>
+        <p>
+            The system caculates the current number of people at your gym.
+            The system has a feature call (schedule timer)- use for making gym plan. E.g are you going to the gym today?
+            The system shows the numbers of people going to the gym at the same time as you.
+            The system allow you to set alarms for reminder.
+        </p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Contact</h2>
+        <address>
+            GymWizz Team<br />
+            Redmond, WA 98052-6399<br />
+            <abbr title="Phone">P:</abbr>
+            425.555.0100
+        </address>
+
+        <address>
+            <strong>Facebook:</strong>   <a href="https://www.facebook.com/GymWizz/">GymWizz@facebook</a><br />
+            <strong>Marketing:</strong> <a href="https://twitter.com/GymWizz">Gym@twitter</a>
+        </address>
+
     </div>
-</div>*@

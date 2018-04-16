@@ -29,6 +29,7 @@ namespace GymWizz.Models
         public int GoingTime { get; set; }
         public int LeavingTime { get; set; }
         public int GymId { get; set; }
+        public bool GetAlarm { get; set; }
         
     }
 

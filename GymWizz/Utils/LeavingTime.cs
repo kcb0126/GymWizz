@@ -17,7 +17,9 @@ namespace GymWizz.Utils
                 new LeavingTime{Id = 3, Name = "3PM"},
                 new LeavingTime{Id = 4, Name = "4PM"},
                 new LeavingTime{Id = 5, Name = "5PM"},
-                new LeavingTime{Id = 6, Name = "6PM"}
+                new LeavingTime{Id = 6, Name = "6PM"},
+                new LeavingTime{Id = 7, Name = "7PM"},
+                new LeavingTime{Id = 8, Name = "8PM"},
             };
     }
 }

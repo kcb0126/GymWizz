@@ -105,6 +105,9 @@ namespace GymWizz.Models
         [Required]
         [Display(Name = "Leaving Time")]
         public int LeavingTime { get; set; }
+
+        [Display(Name = "Alarm")]
+        public bool GetAlarm { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -185,6 +186,10 @@
     <Compile Include="Migrations\201803190914159_GymId.Designer.cs">
       <DependentUpon>201803190914159_GymId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803221742534_GetAlarm.cs" />
+    <Compile Include="Migrations\201803221742534_GetAlarm.Designer.cs">
+      <DependentUpon>201803221742534_GetAlarm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -198,10 +203,14 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\SlideShow.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\img1.png" />
+    <Content Include="Images\img2.jpeg" />
+    <Content Include="Images\img3.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -216,7 +225,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -251,7 +262,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\FindGym.cshtml" />
+    <Content Include="Views\Account\FindGym.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803190914159_GymId.resx">
       <DependentUpon>201803190914159_GymId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803221742534_GetAlarm.resx">
+      <DependentUpon>201803221742534_GetAlarm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

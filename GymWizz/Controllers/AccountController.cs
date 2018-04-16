@@ -139,9 +139,10 @@ namespace GymWizz.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(int gymid = 0)
         {
             ViewBag.Gyms = new SelectList(Gym.Gyms, "Id", "Name");
+            ViewBag.GymId = gymid;
             return View();
         }
 
@@ -160,6 +161,7 @@ namespace GymWizz.Controllers
                                                 LastName = model.LastName,
                                                 GymId = model.GymId,
                                                 IsGoing  = false,
+                                                GetAlarm = false,
                                                 GoingTime = 0,
                                                 LeavingTime = 0};
                 var result = await UserManager.CreateAsync(user, model.Password);
@@ -178,9 +180,17 @@ namespace GymWizz.Controllers
                 AddErrors(result);
             }
 
-            // If we got this far, something failed, redisplay form
+            // If we got this far, failed, redisplay form
+            ViewBag.Gyms = new SelectList(Gym.Gyms, "Id", "Name");
             return View(model);
         }
+
+        [AllowAnonymous]
+        public ActionResult FindGym()
+        {
+            return View();
+        }
+
 
         //
         // GET: /Account/ConfirmEmail

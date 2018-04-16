@@ -30,9 +30,9 @@
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.GymId, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.GymId, (SelectList)ViewBag.Gyms, new { @class = "col-md-2 form-control" })
+            @Html.DropDownListFor(m => m.GymId, (SelectList)ViewBag.Gyms, new { @value = ViewBag.GymId, @class = "col-md-2 form-control" })
         </div>
     </div>
     <div class="form-group">
@@ -50,6 +50,11 @@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class='btn btn-default'>@Html.ActionLink("Find Gym", "FindGym")</button>
         </div>
     </div>
 }

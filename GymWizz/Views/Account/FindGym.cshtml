@@ -2,21 +2,20 @@
 @{
     ViewBag.Title = "Find Gym";
     ViewBag.Gyms = new SelectList(GymWizz.Utils.Gym.Gyms, "Id", "Name");
-    ViewBag.Titles = new string[] { "PureGym", "Fitness First", "Titanic" };
-    ViewBag.Lngs = new double[] { -5.9281140000000505, -0.413641900000016, -8.29485139999997 };
-    ViewBag.Lats = new double[] { 54.593953, 51.8780095, 51.8500029 };
 }
 
 <h2>@ViewBag.Title.</h2>
 
 <div id="input-group" style="padding: 0, 11px, 0, 13px;">
     @Html.DropDownList("Gym Name", (SelectList)ViewBag.Gyms, new { @id="cboGym", @class = "form-control", @style = "margin-top: 9px;" })
+    <button id="btnSignup" class="btn btn-default">Sign up</button>
 </div>
 
 <div id="map" style="height: 100%;"></div>
 
 <script>
     var centerLat = 54.593978, centerLng = -5.928114;
+    var gymId = 0;
     function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: centerLat, lng: centerLng},
@@ -49,8 +48,13 @@
         }
 
 		cboGym.onchange = function () {
-		    selectGym(this.value);
+            selectGym(this.value);
+            gymId = this.value;
 		}
+
+        document.getElementById("btnSignup").onclick = function () {
+            window.location.href = "Register?gymid=" + gymId;
+        }
 
         var service = new google.maps.places.PlacesService(map);
 
