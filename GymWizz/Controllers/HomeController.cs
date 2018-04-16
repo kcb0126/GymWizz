@@ -144,5 +144,36 @@ namespace GymWizz.Controllers
             return View();
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Plan(PlanViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var email = User.Identity.Name;
+                var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
+                var manager = new UserManager<ApplicationUser>(store);
+                var currentUser = manager.FindByEmail(User.Identity.Name);
+
+                currentUser.LegRaises = model.LegRaises;
+                currentUser.SitUps = model.SitUps;
+                currentUser.AbBikes = model.AbBikes;
+                currentUser.SitUpTouchingKnees = model.SitUpTouchingKnees;
+                currentUser.PlankFromKnees = model.PlankFromKnees;
+                currentUser.Arms = model.Arms;
+                currentUser.Leg = model.Leg;
+                currentUser.Chest = model.Chest;
+                currentUser.TotalBody = model.TotalBody;
+
+                await manager.UpdateAsync(currentUser);
+                var ctx = store.Context;
+                ctx.SaveChanges();
+
+                return RedirectToAction("Plan");
+            }
+            return View(model);
+        }
+
     }
 }
