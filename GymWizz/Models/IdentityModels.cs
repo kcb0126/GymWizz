@@ -30,7 +30,15 @@ namespace GymWizz.Models
         public int LeavingTime { get; set; }
         public int GymId { get; set; }
         public bool GetAlarm { get; set; }
-        
+        public bool LegRaises { get; set; }
+        public bool SitUps { get; set; }
+        public bool AbBikes { get; set; }
+        public bool SitUpTouchingKnees { get; set; }
+        public bool PlankFromKnees { get; set; }
+        public bool Arms { get; set; }
+        public bool Leg { get; set; }
+        public bool Chest { get; set; }
+        public bool TotalBody { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
