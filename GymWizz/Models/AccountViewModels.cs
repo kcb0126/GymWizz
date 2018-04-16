@@ -110,6 +110,37 @@ namespace GymWizz.Models
         public bool GetAlarm { get; set; }
     }
 
+    public class PlanViewModel
+    {
+        [Display(Name = "Leg Raises")]
+        public bool LegRaises { get; set; }
+
+        [Display(Name = "Sit ups")]
+        public bool SitUps { get; set; }
+
+        [Display(Name = "Ab bikes")]
+        public bool AbBikes { get; set; }
+
+        [Display(Name = "Sit up touching knees")]
+        public bool SitUpTouchingKnees { get; set; }
+
+        [Display(Name = "Plank from knees")]
+        public bool PlankFromKnees { get; set; }
+
+        [Display(Name = "Arms")]
+        public bool Arms { get; set; }
+
+        [Display(Name = "Leg")]
+        public bool Leg { get; set; }
+
+        [Display(Name = "Chest")]
+        public bool Chest { get; set; }
+
+        [Display(Name = "TotalBody")]
+        public bool TotalBody { get; set; }
+
+    }
+
     public class ResetPasswordViewModel
     {
         [Required]
