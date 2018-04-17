@@ -7,13 +7,18 @@
 
 <h4>Today</h4>
 
-@using (Html.BeginForm("Plan", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Plan", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "formworkout"  }))
 {
     @Html.AntiForgeryToken()
 
     <hr />
     <div class="form-group">
-        <h4>Abs:</h4>
+        @Html.Label("Abs", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.CheckBox("Abs", new { @id = "abs" })
+        </div>
+    </div>
+    <div class="form-group" id="absgroup" style="display: none;">
         <div class="form-group">
             @Html.LabelFor(m => m.LegRaises, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
@@ -79,15 +84,131 @@
             <input type="submit" class="btn btn-default" value="Save" />
         </div>
     </div>
-    <script>
-        document.getElementById("legraises").checked = @ViewBag.LegRaises;
-        document.getElementById("situps").checked = @ViewBag.SitUps;
-        document.getElementById("abbikes").checked = @ViewBag.AbBikes;
-        document.getElementById("situptouchingknees").checked = @ViewBag.SitUpTouchingKnees;
-        document.getElementById("plankfromknees").checked = @ViewBag.PlankFromKnees;
-        document.getElementById("arms").checked = @ViewBag.Arms;
-        document.getElementById("leg").checked = @ViewBag.Leg;
-        document.getElementById("chest").checked = @ViewBag.Chest;
-        document.getElementById("totalbody").checked = @ViewBag.TotalBody;
-    </script>
 }
+
+<script>
+    var chkLegraises = document.getElementById("legraises");
+    var chkSitups = document.getElementById("situps");
+    var chkAbbikes = document.getElementById("abbikes");
+    var chkSituptouchingknees = document.getElementById("situptouchingknees");
+    var chkPlankfromknees = document.getElementById("plankfromknees");
+    var chkArms = document.getElementById("arms");
+    var chkLeg = document.getElementById("leg");
+    var chkChest = document.getElementById("chest");
+    var chkTotalbody = document.getElementById("totalbody");
+    var chkAbs = document.getElementById("abs");
+    var chkAbsgroup = document.getElementById("absgroup");
+
+    chkLegraises.checked = @ViewBag.LegRaises;
+    chkSitups.checked = @ViewBag.SitUps;
+    chkAbbikes.checked = @ViewBag.AbBikes;
+    chkSituptouchingknees.checked = @ViewBag.SitUpTouchingKnees;
+    chkPlankfromknees.checked = @ViewBag.PlankFromKnees;
+    chkArms.checked = @ViewBag.Arms;
+    chkLeg.checked = @ViewBag.Leg;
+    chkChest.checked = @ViewBag.Chest;
+    chkTotalbody.checked = @ViewBag.TotalBody;
+
+    if (chkLegraises.checked ||
+        chkSitups.checked ||
+        chkAbbikes.checked ||
+        chkSituptouchingknees.checked ||
+        chkPlankfromknees.checked)
+    {
+        chkAbs.checked = true;
+        chkAbsgroup.style.display = "block";
+    }
+
+    if (chkTotalbody.checked) {
+        chkAbs.checked = true;
+        chkArms.checked = true;
+        chkLeg.checked = true;
+        chkChest.checked = true;
+
+        chkAbs.disabled = true;
+        chkArms.disabled = true;
+        chkLeg.disabled = true;
+        chkChest.disabled = true;
+    }
+
+    function workoutcount() {
+        var count = 0;
+        count += chkAbs.checked ? 1 : 0;
+        count += chkArms.checked ? 1 : 0;
+        count += chkLeg.checked ? 1 : 0;
+        count += chkChest.checked ? 1 : 0;
+        return count;
+    }
+
+    function onClickExercise(object) {
+        if (object.checked) {
+            if (workoutcount() > 2 && !(chkTotalbody.checked)) {
+                object.checked = false;
+                alert("You can select 2 exercises at most.")
+            }
+        } else {
+            chkTotalbody.checked = false;
+        }
+    }
+
+    chkAbs.onchange = function () {
+        if (this.checked) {
+            chkAbsgroup.style.display = "block";
+        } else {
+            chkAbsgroup.style.display = "none";
+            chkLegraises.checked = false;
+            chkSitups.checked = false;
+            chkAbbikes.checked = false;
+            chkSituptouchingknees.checked = false;
+            chkPlankfromknees.checked = false;
+        }
+        onClickExercise(this);
+    };
+
+    chkArms.onchange = function () {
+        onClickExercise(this);
+    }
+
+    chkLeg.onchange = function () {
+        onClickExercise(this);
+    }
+
+    chkChest.onchange = function () {
+        onClickExercise(this);
+    }
+
+    chkTotalbody.onchange = function () {
+        if (this.checked) {
+            chkAbs.checked = true;
+            chkArms.checked = true;
+            chkLeg.checked = true;
+            chkChest.checked = true;
+
+            chkAbs.disabled = true;
+            chkArms.disabled = true;
+            chkLeg.disabled = true;
+            chkChest.disabled = true;
+        } else {
+            chkAbs.checked = false;
+            chkArms.checked = false;
+            chkLeg.checked = false;
+            chkChest.checked = false;
+
+            chkAbs.disabled = false;
+            chkArms.disabled = false;
+            chkLeg.disabled = false;
+            chkChest.disabled = false;
+        }
+        chkAbs.onchange();
+    }
+
+    document.getElementById("formworkout").onsubmit = function() {
+        chkAbs.disabled = false;
+        chkArms.disabled = false;
+        chkLeg.disabled = false;
+        chkChest.disabled = false;
+
+        return true;
+    }
+
+</script>

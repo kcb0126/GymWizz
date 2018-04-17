@@ -190,41 +190,65 @@
     <Compile Include="Migrations\201803221742534_GetAlarm.Designer.cs">
       <DependentUpon>201803221742534_GetAlarm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160945437_LegRaises.cs" />
-    <Compile Include="Migrations\201804160945437_LegRaises.Designer.cs">
-      <DependentUpon>201804160945437_LegRaises.cs</DependentUpon>
+    <Compile Include="Migrations\201804171013299_LegRaises.cs" />
+    <Compile Include="Migrations\201804171013299_LegRaises.Designer.cs">
+      <DependentUpon>201804171013299_LegRaises.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160946540_SitUps.cs" />
-    <Compile Include="Migrations\201804160946540_SitUps.Designer.cs">
-      <DependentUpon>201804160946540_SitUps.cs</DependentUpon>
+    <Compile Include="Migrations\201804171013595_SitUps.cs" />
+    <Compile Include="Migrations\201804171013595_SitUps.Designer.cs">
+      <DependentUpon>201804171013595_SitUps.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160947227_AbBikes.cs" />
-    <Compile Include="Migrations\201804160947227_AbBikes.Designer.cs">
-      <DependentUpon>201804160947227_AbBikes.cs</DependentUpon>
+    <Compile Include="Migrations\201804171014288_AbBikes.cs" />
+    <Compile Include="Migrations\201804171014288_AbBikes.Designer.cs">
+      <DependentUpon>201804171014288_AbBikes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160947432_SitUpTouchingKnees.cs" />
-    <Compile Include="Migrations\201804160947432_SitUpTouchingKnees.Designer.cs">
-      <DependentUpon>201804160947432_SitUpTouchingKnees.cs</DependentUpon>
+    <Compile Include="Migrations\201804171015018_SitUpTouchingKnees.cs" />
+    <Compile Include="Migrations\201804171015018_SitUpTouchingKnees.Designer.cs">
+      <DependentUpon>201804171015018_SitUpTouchingKnees.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160948022_PlankFromKnees.cs" />
-    <Compile Include="Migrations\201804160948022_PlankFromKnees.Designer.cs">
-      <DependentUpon>201804160948022_PlankFromKnees.cs</DependentUpon>
+    <Compile Include="Migrations\201804171015365_PlankFromKnees.cs" />
+    <Compile Include="Migrations\201804171015365_PlankFromKnees.Designer.cs">
+      <DependentUpon>201804171015365_PlankFromKnees.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160948182_Arms.cs" />
-    <Compile Include="Migrations\201804160948182_Arms.Designer.cs">
-      <DependentUpon>201804160948182_Arms.cs</DependentUpon>
+    <Compile Include="Migrations\201804171028355_BarbelCurls.cs" />
+    <Compile Include="Migrations\201804171028355_BarbelCurls.Designer.cs">
+      <DependentUpon>201804171028355_BarbelCurls.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160948341_Leg.cs" />
-    <Compile Include="Migrations\201804160948341_Leg.Designer.cs">
-      <DependentUpon>201804160948341_Leg.cs</DependentUpon>
+    <Compile Include="Migrations\201804171038342_CloseGripBarbellBenchPress.cs" />
+    <Compile Include="Migrations\201804171038342_CloseGripBarbellBenchPress.Designer.cs">
+      <DependentUpon>201804171038342_CloseGripBarbellBenchPress.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160948496_Chest.cs" />
-    <Compile Include="Migrations\201804160948496_Chest.Designer.cs">
-      <DependentUpon>201804160948496_Chest.cs</DependentUpon>
+    <Compile Include="Migrations\201804171042348_MachinePreacherCurls.cs" />
+    <Compile Include="Migrations\201804171042348_MachinePreacherCurls.Designer.cs">
+      <DependentUpon>201804171042348_MachinePreacherCurls.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804160950134_TotalBody.cs" />
-    <Compile Include="Migrations\201804160950134_TotalBody.Designer.cs">
-      <DependentUpon>201804160950134_TotalBody.cs</DependentUpon>
+    <Compile Include="Migrations\201804171051585_LegExtension.cs" />
+    <Compile Include="Migrations\201804171051585_LegExtension.Designer.cs">
+      <DependentUpon>201804171051585_LegExtension.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171059148_DumbellWalkingLunge.cs" />
+    <Compile Include="Migrations\201804171059148_DumbellWalkingLunge.Designer.cs">
+      <DependentUpon>201804171059148_DumbellWalkingLunge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171100185_StandingCalfRaises.cs" />
+    <Compile Include="Migrations\201804171100185_StandingCalfRaises.Designer.cs">
+      <DependentUpon>201804171100185_StandingCalfRaises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171105235_Squat.cs" />
+    <Compile Include="Migrations\201804171105235_Squat.Designer.cs">
+      <DependentUpon>201804171105235_Squat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171111275_InclineDumbbell.cs" />
+    <Compile Include="Migrations\201804171111275_InclineDumbbell.Designer.cs">
+      <DependentUpon>201804171111275_InclineDumbbell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171113027_BenchPress.cs" />
+    <Compile Include="Migrations\201804171113027_BenchPress.Designer.cs">
+      <DependentUpon>201804171113027_BenchPress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171114207_Flying.cs" />
+    <Compile Include="Migrations\201804171114207_Flying.Designer.cs">
+      <DependentUpon>201804171114207_Flying.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -339,32 +363,50 @@
     <EmbeddedResource Include="Migrations\201803221742534_GetAlarm.resx">
       <DependentUpon>201803221742534_GetAlarm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160945437_LegRaises.resx">
-      <DependentUpon>201804160945437_LegRaises.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804171013299_LegRaises.resx">
+      <DependentUpon>201804171013299_LegRaises.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160946540_SitUps.resx">
-      <DependentUpon>201804160946540_SitUps.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804171013595_SitUps.resx">
+      <DependentUpon>201804171013595_SitUps.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160947227_AbBikes.resx">
-      <DependentUpon>201804160947227_AbBikes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804171014288_AbBikes.resx">
+      <DependentUpon>201804171014288_AbBikes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160947432_SitUpTouchingKnees.resx">
-      <DependentUpon>201804160947432_SitUpTouchingKnees.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804171015018_SitUpTouchingKnees.resx">
+      <DependentUpon>201804171015018_SitUpTouchingKnees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160948022_PlankFromKnees.resx">
-      <DependentUpon>201804160948022_PlankFromKnees.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804171015365_PlankFromKnees.resx">
+      <DependentUpon>201804171015365_PlankFromKnees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160948182_Arms.resx">
-      <DependentUpon>201804160948182_Arms.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804171028355_BarbelCurls.resx">
+      <DependentUpon>201804171028355_BarbelCurls.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160948341_Leg.resx">
-      <DependentUpon>201804160948341_Leg.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804171038342_CloseGripBarbellBenchPress.resx">
+      <DependentUpon>201804171038342_CloseGripBarbellBenchPress.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160948496_Chest.resx">
-      <DependentUpon>201804160948496_Chest.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804171042348_MachinePreacherCurls.resx">
+      <DependentUpon>201804171042348_MachinePreacherCurls.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804160950134_TotalBody.resx">
-      <DependentUpon>201804160950134_TotalBody.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804171051585_LegExtension.resx">
+      <DependentUpon>201804171051585_LegExtension.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171059148_DumbellWalkingLunge.resx">
+      <DependentUpon>201804171059148_DumbellWalkingLunge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171100185_StandingCalfRaises.resx">
+      <DependentUpon>201804171100185_StandingCalfRaises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171105235_Squat.resx">
+      <DependentUpon>201804171105235_Squat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171111275_InclineDumbbell.resx">
+      <DependentUpon>201804171111275_InclineDumbbell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171113027_BenchPress.resx">
+      <DependentUpon>201804171113027_BenchPress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171114207_Flying.resx">
+      <DependentUpon>201804171114207_Flying.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -30,14 +30,31 @@ namespace GymWizz.Models
         public int LeavingTime { get; set; }
         public int GymId { get; set; }
         public bool GetAlarm { get; set; }
+
+        // Abs workouts
         public bool LegRaises { get; set; }
         public bool SitUps { get; set; }
         public bool AbBikes { get; set; }
         public bool SitUpTouchingKnees { get; set; }
         public bool PlankFromKnees { get; set; }
-        public bool Arms { get; set; }
-        public bool Leg { get; set; }
-        public bool Chest { get; set; }
+
+        // Arms workouts
+        public bool BarbellCurls { get; set; }
+        public bool CloseGripBarbellBenchPress { get; set; }
+        public bool MachinePreacherCurls { get; set; }
+
+        // Leg workouts
+        public bool LegExtension { get; set; }
+        public bool DumbellWalkingLunge { get; set; }
+        public bool StandingCalfRaises { get; set; }
+        public bool Squat { get; set; }
+
+        // Chest workouts
+        public bool InclineDumbbell { get; set; }
+        public bool BenchPress { get; set; }
+        public bool Flying { get; set; }
+
+        // total body
         public bool TotalBody { get; set; }
     }
 

@@ -136,9 +136,6 @@ namespace GymWizz.Controllers
             ViewBag.AbBikes = currentUser.AbBikes ? "true" : "false";
             ViewBag.SitUpTouchingKnees = currentUser.SitUpTouchingKnees ? "true" : "false";
             ViewBag.PlankFromKnees = currentUser.PlankFromKnees ? "true" : "false";
-            ViewBag.Arms = currentUser.Arms ? "true" : "false";
-            ViewBag.Leg = currentUser.Leg ? "true" : "false";
-            ViewBag.Chest = currentUser.Chest ? "true" : "false";
             ViewBag.TotalBody = currentUser.TotalBody ? "true" : "false";
 
             return View();
@@ -161,9 +158,6 @@ namespace GymWizz.Controllers
                 currentUser.AbBikes = model.AbBikes;
                 currentUser.SitUpTouchingKnees = model.SitUpTouchingKnees;
                 currentUser.PlankFromKnees = model.PlankFromKnees;
-                currentUser.Arms = model.Arms;
-                currentUser.Leg = model.Leg;
-                currentUser.Chest = model.Chest;
                 currentUser.TotalBody = model.TotalBody;
 
                 await manager.UpdateAsync(currentUser);
