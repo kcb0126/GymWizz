@@ -51,27 +51,97 @@
         </div>
     </div>
     <hr />
+
     <div class="form-group">
-        @Html.LabelFor(m => m.Arms, new { @class = "col-md-2 control-label" })
+        @Html.Label("Arms", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.CheckBoxFor(m => m.Arms, new { @id = "arms" })
+            @Html.CheckBox("Arms", new { @id = "arms" })
+        </div>
+    </div>
+    <div class="form-group" id="armsgroup" style="display: none;">
+        <div class="form-group">
+            @Html.LabelFor(m => m.BarbellCurls, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.BarbellCurls, new { @id = "barbellcurls" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.CloseGripBarbellBenchPress, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.CloseGripBarbellBenchPress, new { @id = "closegripbarbellbenchpress" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.MachinePreacherCurls, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.MachinePreacherCurls, new { @id = "machinepreachercurls" })
+            </div>
         </div>
     </div>
     <hr />
+
     <div class="form-group">
-        @Html.LabelFor(m => m.Leg, new { @class = "col-md-2 control-label" })
+        @Html.Label("Leg", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.CheckBoxFor(m => m.Leg, new { @id = "leg" })
+            @Html.CheckBox("Arms", new { @id = "leg" })
+        </div>
+    </div>
+    <div class="form-group" id="leggroup" style="display: none;">
+        <div class="form-group">
+            @Html.LabelFor(m => m.LegExtension, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.LegExtension, new { @id = "legextension" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.DumbellWalkingLunge, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.DumbellWalkingLunge, new { @id = "dumbellwalkinglunge" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.StandingCalfRaises, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.StandingCalfRaises, new { @id = "standingcalfraises" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Squat, new { @class = "col-md-2 control-label" });
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.Squat, new { @id = "squat" });
+            </div>
         </div>
     </div>
     <hr />
+
     <div class="form-group">
-        @Html.LabelFor(m => m.Chest, new { @class = "col-md-2 control-label" })
+        @Html.Label("Chest", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.CheckBoxFor(m => m.Chest, new { @id = "chest" })
+            @Html.CheckBox("Chest", new { @id = "chest" })
+        </div>
+    </div>
+    <div class="form-group" id="chestgroup" style="display: none;">
+        <div class="form-group">
+            @Html.LabelFor(m => m.InclineDumbbell, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.InclineDumbbell, new { @id = "inclinedumbbell" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.BenchPress, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.BenchPress, new { @id = "benchpress" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Flying, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.Flying, new { @id = "flying" })
+            </div>
         </div>
     </div>
     <hr />
+
     <div class="form-group">
         @Html.LabelFor(m => m.TotalBody, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
@@ -87,26 +157,55 @@
 }
 
 <script>
+    var chkAbs = document.getElementById("abs");
+    var divAbsgroup = document.getElementById("absgroup");
     var chkLegraises = document.getElementById("legraises");
     var chkSitups = document.getElementById("situps");
     var chkAbbikes = document.getElementById("abbikes");
     var chkSituptouchingknees = document.getElementById("situptouchingknees");
     var chkPlankfromknees = document.getElementById("plankfromknees");
+
     var chkArms = document.getElementById("arms");
+    var divArmsgroup = document.getElementById("armsgroup");
+    var chkBarbellcurls = document.getElementById("barbellcurls");
+    var chkClosegripbarbellbenchpress = document.getElementById("closegripbarbellbenchpress");
+    var chkMachinepreachercurls = document.getElementById("machinepreachercurls");
+
     var chkLeg = document.getElementById("leg");
+    var divLeggroup = document.getElementById("leggroup");
+    var chkLegextension = document.getElementById("legextension");
+    var chkDumbellwalkinglunge = document.getElementById("dumbellwalkinglunge");
+    var chkStandingcalfraises = document.getElementById("standingcalfraises");
+    var chkSquat = document.getElementById("squat");
+
     var chkChest = document.getElementById("chest");
+    var divChestgroup = document.getElementById("chestgroup");
+    var chkInclinedumbbell = document.getElementById("inclinedumbbell");
+    var chkBenchpress = document.getElementById("benchpress");
+    var chkFlying = document.getElementById("flying");
+
+
     var chkTotalbody = document.getElementById("totalbody");
-    var chkAbs = document.getElementById("abs");
-    var chkAbsgroup = document.getElementById("absgroup");
 
     chkLegraises.checked = @ViewBag.LegRaises;
     chkSitups.checked = @ViewBag.SitUps;
     chkAbbikes.checked = @ViewBag.AbBikes;
     chkSituptouchingknees.checked = @ViewBag.SitUpTouchingKnees;
     chkPlankfromknees.checked = @ViewBag.PlankFromKnees;
-    chkArms.checked = @ViewBag.Arms;
-    chkLeg.checked = @ViewBag.Leg;
-    chkChest.checked = @ViewBag.Chest;
+
+    chkBarbellcurls.checked = @ViewBag.BarbellCurls;
+    chkClosegripbarbellbenchpress.checked = @ViewBag.CloseGripBarbellBenchPress;
+    chkMachinepreachercurls.checked = @ViewBag.MachinePreacherCurls;
+
+    chkLegextension.checked = @ViewBag.LegExtension;
+    chkDumbellwalkinglunge.checked = @ViewBag.DumbellWalkingLunge;
+    chkStandingcalfraises.checked = @ViewBag.StandingCalfRaises;
+    chkSquat.checked = @ViewBag.Squat;
+
+    chkInclinedumbbell.checked = @ViewBag.InclineDumbbell;
+    chkBenchpress.checked = @ViewBag.BenchPress;
+    chkFlying.checked = @ViewBag.Flying;
+
     chkTotalbody.checked = @ViewBag.TotalBody;
 
     if (chkLegraises.checked ||
@@ -116,7 +215,32 @@
         chkPlankfromknees.checked)
     {
         chkAbs.checked = true;
-        chkAbsgroup.style.display = "block";
+        divAbsgroup.style.display = "block";
+    }
+
+    if(chkBarbellcurls.checked ||
+        chkClosegripbarbellbenchpress.checked ||
+        chkMachinepreachercurls.checked)
+    {
+        chkArms.checked = true;
+        divArmsgroup.style.display = "block";
+    }
+
+    if(chkLegextension.checked ||
+        chkDumbellwalkinglunge.checked ||
+        chkStandingcalfraises.checked ||
+        chkSquat.checked)
+    {
+        chkLeg.checked = true;
+        divLeggroup.style.display = "block";
+    }
+
+    if(chkInclinedumbbell.checked ||
+        chkBenchpress.checked ||
+        chkFlying.checked)
+    {
+        chkChest.checked = true;
+        divChestgroup.style.display = "block";
     }
 
     if (chkTotalbody.checked) {
@@ -153,9 +277,9 @@
 
     chkAbs.onchange = function () {
         if (this.checked) {
-            chkAbsgroup.style.display = "block";
+            divAbsgroup.style.display = "block";
         } else {
-            chkAbsgroup.style.display = "none";
+            divAbsgroup.style.display = "none";
             chkLegraises.checked = false;
             chkSitups.checked = false;
             chkAbbikes.checked = false;
@@ -166,14 +290,39 @@
     };
 
     chkArms.onchange = function () {
+        if(this.checked) {
+            divArmsgroup.style.display = "block";
+        } else {
+            divArmsgroup.style.display = "none";
+            chkBarbellcurls.checked = false;
+            chkClosegripbarbellbenchpress.checked = false;
+            chkMachinepreachercurls.checked = false;
+        }
         onClickExercise(this);
     }
 
     chkLeg.onchange = function () {
+        if(this.checked) {
+            divLeggroup.style.display = "block";
+        } else {
+            divLeggroup.style.display = "none";
+            chkLegextension.checked = false;
+            chkDumbellwalkinglunge.checked = false;
+            chkStandingcalfraises.checked = false;
+            chkSquat.checked = false;
+        }
         onClickExercise(this);
     }
 
     chkChest.onchange = function () {
+        if(this.checked) {
+            divChestgroup.style.display = "block";
+        } else {
+            divChestgroup.style.display = "none";
+            chkInclinedumbbell.checked = false;
+            chkBenchpress.checked = false;
+            chkFlying.checked = false;
+        }
         onClickExercise(this);
     }
 
@@ -202,13 +351,8 @@
         chkAbs.onchange();
     }
 
-    document.getElementById("formworkout").onsubmit = function() {
-        chkAbs.disabled = false;
-        chkArms.disabled = false;
-        chkLeg.disabled = false;
-        chkChest.disabled = false;
-
-        return true;
-    }
+    //document.getElementById("formworkout").onsubmit = function() {
+    //    return true;
+    //}
 
 </script>

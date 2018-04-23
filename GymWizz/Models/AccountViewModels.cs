@@ -112,6 +112,7 @@ namespace GymWizz.Models
 
     public class PlanViewModel
     {
+        // Abs workouts
         [Display(Name = "Leg Raises")]
         public bool LegRaises { get; set; }
 
@@ -127,16 +128,40 @@ namespace GymWizz.Models
         [Display(Name = "Plank from knees")]
         public bool PlankFromKnees { get; set; }
 
-        [Display(Name = "Arms")]
-        public bool Arms { get; set; }
+        // Arms workouts
+        [Display(Name = "Barbell Curl")]
+        public bool BarbellCurls { get; set; }
 
-        [Display(Name = "Leg")]
-        public bool Leg { get; set; }
+        [Display(Name = "Close-Grip Barbell Bench Press")]
+        public bool CloseGripBarbellBenchPress { get; set; }
 
-        [Display(Name = "Chest")]
-        public bool Chest { get; set; }
+        [Display(Name = "Machine Preacher Curls")]
+        public bool MachinePreacherCurls { get; set; }
 
-        [Display(Name = "TotalBody")]
+        // Leg workouts
+        [Display(Name = "Leg Extension")]
+        public bool LegExtension { get; set; }
+
+        [Display(Name = "Dumbbell Walking Lunge")]
+        public bool DumbellWalkingLunge { get; set; }
+
+        [Display(Name = "Standing Calf Raises")]
+        public bool StandingCalfRaises { get; set; }
+
+        [Display(Name = "Squat")]
+        public bool Squat { get; set; }
+
+        // Chest workouts
+        [Display(Name = "Incline Dumbbell")]
+        public bool InclineDumbbell { get; set; }
+
+        [Display(Name = "Bench Press")]
+        public bool BenchPress { get; set; }
+
+        [Display(Name = "Flying")]
+        public bool Flying { get; set; }
+
+        [Display(Name = "Total Body")]
         public bool TotalBody { get; set; }
 
     }

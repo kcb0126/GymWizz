@@ -136,6 +136,20 @@ namespace GymWizz.Controllers
             ViewBag.AbBikes = currentUser.AbBikes ? "true" : "false";
             ViewBag.SitUpTouchingKnees = currentUser.SitUpTouchingKnees ? "true" : "false";
             ViewBag.PlankFromKnees = currentUser.PlankFromKnees ? "true" : "false";
+
+            ViewBag.BarbellCurls = currentUser.BarbellCurls ? "true" : "false";
+            ViewBag.CloseGripBarbellBenchPress = currentUser.CloseGripBarbellBenchPress ? "true" : "false";
+            ViewBag.MachinePreacherCurls = currentUser.MachinePreacherCurls ? "true" : "false";
+
+            ViewBag.LegExtension = currentUser.LegExtension ? "true" : "false";
+            ViewBag.DumbellWalkingLunge = currentUser.DumbellWalkingLunge ? "true" : "false";
+            ViewBag.StandingCalfRaises = currentUser.StandingCalfRaises ? "true" : "false";
+            ViewBag.Squat = currentUser.Squat ? "true" : "false";
+
+            ViewBag.InclineDumbbell = currentUser.InclineDumbbell ? "true" : "false";
+            ViewBag.BenchPress = currentUser.BenchPress ? "true" : "false";
+            ViewBag.Flying = currentUser.Flying ? "true" : "false";
+
             ViewBag.TotalBody = currentUser.TotalBody ? "true" : "false";
 
             return View();
@@ -158,6 +172,20 @@ namespace GymWizz.Controllers
                 currentUser.AbBikes = model.AbBikes;
                 currentUser.SitUpTouchingKnees = model.SitUpTouchingKnees;
                 currentUser.PlankFromKnees = model.PlankFromKnees;
+
+                currentUser.BarbellCurls = model.BarbellCurls;
+                currentUser.CloseGripBarbellBenchPress = model.CloseGripBarbellBenchPress;
+                currentUser.MachinePreacherCurls = model.MachinePreacherCurls;
+
+                currentUser.LegExtension = model.LegExtension;
+                currentUser.DumbellWalkingLunge = model.DumbellWalkingLunge;
+                currentUser.StandingCalfRaises = model.StandingCalfRaises;
+                currentUser.Squat = model.Squat;
+
+                currentUser.InclineDumbbell = model.InclineDumbbell;
+                currentUser.BenchPress = model.BenchPress;
+                currentUser.Flying = model.Flying;
+
                 currentUser.TotalBody = model.TotalBody;
 
                 await manager.UpdateAsync(currentUser);
