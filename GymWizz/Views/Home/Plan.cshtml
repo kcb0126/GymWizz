@@ -106,9 +106,9 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Squat, new { @class = "col-md-2 control-label" });
+            @Html.LabelFor(m => m.Squat, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.CheckBoxFor(m => m.Squat, new { @id = "squat" });
+                @Html.CheckBoxFor(m => m.Squat, new { @id = "squat" })
             </div>
         </div>
     </div>
@@ -276,6 +276,7 @@
     }
 
     chkAbs.onchange = function () {
+        onClickExercise(this);
         if (this.checked) {
             divAbsgroup.style.display = "block";
         } else {
@@ -286,10 +287,10 @@
             chkSituptouchingknees.checked = false;
             chkPlankfromknees.checked = false;
         }
-        onClickExercise(this);
     };
 
     chkArms.onchange = function () {
+        onClickExercise(this);
         if(this.checked) {
             divArmsgroup.style.display = "block";
         } else {
@@ -298,10 +299,10 @@
             chkClosegripbarbellbenchpress.checked = false;
             chkMachinepreachercurls.checked = false;
         }
-        onClickExercise(this);
     }
 
     chkLeg.onchange = function () {
+        onClickExercise(this);
         if(this.checked) {
             divLeggroup.style.display = "block";
         } else {
@@ -311,10 +312,10 @@
             chkStandingcalfraises.checked = false;
             chkSquat.checked = false;
         }
-        onClickExercise(this);
     }
 
     chkChest.onchange = function () {
+        onClickExercise(this);
         if(this.checked) {
             divChestgroup.style.display = "block";
         } else {
@@ -323,7 +324,6 @@
             chkBenchpress.checked = false;
             chkFlying.checked = false;
         }
-        onClickExercise(this);
     }
 
     chkTotalbody.onchange = function () {
@@ -332,6 +332,11 @@
             chkArms.checked = true;
             chkLeg.checked = true;
             chkChest.checked = true;
+
+            divAbsgroup.style.display = "block";
+            divArmsgroup.style.display = "block";
+            divLeggroup.style.display = "block";
+            divChestgroup.style.display = "block";
 
             chkAbs.disabled = true;
             chkArms.disabled = true;
