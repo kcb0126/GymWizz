@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using GymWizz.Extensions;
 using GymWizz.Models;
 using GymWizz.Utils;
 using Microsoft.AspNet.Identity.EntityFramework;

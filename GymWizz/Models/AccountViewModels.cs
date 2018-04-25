@@ -95,7 +95,7 @@ namespace GymWizz.Models
 
     public class MainViewModel
     {
-        [Display(Name = "Goint to gym")]
+        [Display(Name = "Going to gym")]
         public bool IsGoing { get; set; }
 
         [Required]
